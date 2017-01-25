@@ -11,8 +11,15 @@
     </head>
 
     <body>
-        <div id="mainContainer" class="container-fluid">
-            <list-select params="title: listSelectOptions.title, items: listSelectOptions.items"></list-select>
+        <div id="mainContainer" class="container-fluid" style="padding: 10px">
+            <div data-bind="with: items">
+                <list-select params="items: $parent.items,
+                    buttons: $parent.buttons,
+                    selected: $parent.selected,
+                    some: $parent.some,
+                    title: $parent.title"></list-select>
+            </div>
+            
         </div>
     </body> 
 </html>
